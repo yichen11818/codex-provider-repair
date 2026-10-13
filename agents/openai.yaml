@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 会话供应商检测与修复"
+  short_description: "检测历史会话与数据库供应商缺失或不一致，支持指定目标并备份修复"
+  default_prompt: "使用 $codex-provider-repair 检测会话文件与数据库的供应商引用问题，并按我的要求选择是否修复。"

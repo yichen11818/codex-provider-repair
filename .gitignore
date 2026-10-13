@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+
+# Local Codex data, audit reports and backups
+.codex/
+sessions/
+archived_sessions/
+provider-repair-backups/
+*.jsonl
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+provider-*.json
+codex-provider-*.json
+manifest.json
+*.tmp
+.env
+.env.*
+config.toml
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
