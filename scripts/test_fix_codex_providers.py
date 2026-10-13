@@ -198,7 +198,8 @@ class SkillWorkflowTests(unittest.TestCase):
         _, report = self.run_cli("--thread-id", self.SECOND)
         issues = [i for i in report["issues"] if i["kind"] == "rollout_path_not_scanned"]
         self.assertEqual(len(issues), 1)
-        self.assertEqual(issues[0]["found_by_id"], [str(self.sessions[1])])
+        self.assertEqual(len(issues[0]["found_by_id"]), 1)
+        self.assertTrue(Path(issues[0]["found_by_id"][0]).samefile(self.sessions[1]))
         with contextlib.closing(sqlite3.connect(self.databases[1])) as db:
             self.assertEqual(db.execute("SELECT rollout_path FROM threads WHERE id=?", (self.SECOND,)).fetchone()[0], old_path)
 
